@@ -1,0 +1,9 @@
+{
+  "name": "react-hooks",
+  "version": "1.0.0",
+  "description": "Sample to learn react hooks",
+  "main": "index.js",
+  "repository": "https://github.com/abhsrivastava/react-hooks.git",
+  "author": "@abhsrivastava",
+  "license": "MIT"
+}
