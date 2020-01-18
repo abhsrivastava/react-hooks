@@ -21,7 +21,10 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js']
     },
     devServer: {
-        contentBase: './',
-        port: 5000
+        contentBase: path.resolve(__dirname, "."),
+        port: 5000,
+        watchContentBase: true,
+        inline: true,
+        hot: true
     }
 }
