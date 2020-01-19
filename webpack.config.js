@@ -25,6 +25,7 @@ module.exports = {
         port: 5000,
         watchContentBase: true,
         inline: true,
-        hot: true
+        hot: true,
+        writeToDisk: true
     }
 }
