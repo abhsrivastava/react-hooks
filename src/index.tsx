@@ -10,22 +10,22 @@ export default function App() : JSX.Element {
     const [value, setValue] = useState<string>("");
     const [todos, setTodos] = useState<ITodo[]>([]);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>):void => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) : void => {
         e.preventDefault()
         addTodo(value);
         setValue('')
     }
-    const addTodo = (text: string):void => {
+    const addTodo = (text: string) : void => {
         const newTodo: ITodo[] = [...todos, {text, complete: false}];
         setTodos(newTodo);
     }
-    const completeTodo = (index:number):void => {
-        const newTodos = [...todos];
+    const completeTodo = (index:number) : void => {
+        const newTodos : ITodo[] = [...todos];
         newTodos[index].complete = !newTodos[index].complete;
         setTodos(newTodos);
     }
-    const removeTodo = (index: number): void => {
-        const newTodos = [...todos];
+    const removeTodo = (index: number) : void => {
+        const newTodos : ITodo[] = [...todos];
         newTodos.splice(index, 1);
         setTodos(newTodos);
     }
@@ -40,12 +40,12 @@ export default function App() : JSX.Element {
                 {todos.map((todo: ITodo, index: number) => {
                 return <Fragment key={index}>
                     <div style={{textDecoration: todo.complete?'line-through':''}}>{todo.text}</div>
-                    <button type="button" onClick={(e) => completeTodo(index)}>
+                    <button type="button" onClick={() => completeTodo(index)}>
                         {' '}
                         {todo.complete? 'Incomplete':'Complete'}
                         {' '}
                     </button>
-                    <button type='button' onClick={(e) => {removeTodo(index)}}>Remove</button>
+                    <button type='button' onClick={() => {removeTodo(index)}}>&times;</button>
                 </Fragment>
                 })}
             </section>
